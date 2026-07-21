@@ -1,17 +1,24 @@
 package com.skillserver.worker.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
-public class workerskill {
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+
+public class WorkerSkill {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @ManyToOne
     @JoinColumn(name="worker_id")
-    private worker work;
-    private skillname  skill;
+    private Worker work;
+    private SkillName skill;
     private int experience;
 
 }

@@ -1,18 +1,18 @@
 package com.skillserver.worker.service;
 
-import com.skillserver.worker.entity.worker;
+import com.skillserver.worker.entity.Worker;
 
 import java.util.List;
 
 public interface workerservice {
 
-     List<worker> allworker();
+     List<Worker> allworker();
 
-     worker findworker(Integer id);
+     Worker findworker(Integer id);
 
-     worker createworker(worker worker);
+     Worker createworker(Worker worker);
 
-     worker updateworker(Integer id,worker worker);
+     Worker updateworker(Integer id, Worker worker);
 
      void deleteById(Integer id);
 }

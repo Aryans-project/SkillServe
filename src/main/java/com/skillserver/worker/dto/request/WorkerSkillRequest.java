@@ -1,6 +1,6 @@
 package com.skillserver.worker.dto.request;
 
-import com.skillserver.worker.entity.skillname;
+import com.skillserver.worker.entity.SkillName;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PositiveOrZero;
 import lombok.AllArgsConstructor;
@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 public class WorkerSkillRequest
 {
     @NotNull(message ="skill is required")
-    private skillname skill;
+    private SkillName skill;
 
     @NotNull(message = "Experience is required")
     @PositiveOrZero(message = "Experience could not be negative")

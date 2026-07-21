@@ -1,7 +1,7 @@
 package com.skillserver.worker.entity;
 
 
-public enum skillname {
+public enum SkillName {
 
     electrician,
     plumber,

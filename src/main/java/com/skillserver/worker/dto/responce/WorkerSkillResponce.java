@@ -1,6 +1,6 @@
 package com.skillserver.worker.dto.responce;
 
-import com.skillserver.worker.entity.skillname;
+import com.skillserver.worker.entity.SkillName;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PositiveOrZero;
 import lombok.AllArgsConstructor;
@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 public class WorkerSkillResponce {
 
     @NotNull(message = "this should be never null")
-    private skillname skills;
+    private SkillName skills;
     @NotNull(message = "this should be there")
     @PositiveOrZero(message = "this cant be negative ")
     private Integer experience;

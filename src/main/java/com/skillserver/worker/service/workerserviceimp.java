@@ -1,6 +1,6 @@
 package com.skillserver.worker.service;
 
-import com.skillserver.worker.entity.worker;
+import com.skillserver.worker.entity.Worker;
 import com.skillserver.exception.workernotfound;
 import com.skillserver.worker.repository.workerepo;
 
@@ -17,24 +17,24 @@ public class workerserviceimp implements workerservice {
 
 
     @Override
-    public List<worker> allworker() {
+    public List<Worker> allworker() {
         return Workrepo.findAll();
     }
 
     @Override
-    public worker findworker( Integer id) {
-        return Workrepo.findById(id).orElseThrow(()->new workernotfound("worker witd id"+id+" not found"));
+    public Worker findworker(Integer id) {
+        return Workrepo.findById(id).orElseThrow(()->new workernotfound("Worker witd id"+id+" not found"));
     }
 
     @Override
-    public worker createworker(worker worker) {
+    public Worker createworker(Worker worker) {
         return Workrepo.save(worker);
     }
 
     @Override
-    public worker updateworker(Integer id, worker worker) {
+    public Worker updateworker(Integer id, Worker worker) {
 
-        worker existingworker = Workrepo.findById(id).orElseThrow(()-> new RuntimeException("no worker found"));
+        Worker existingworker = Workrepo.findById(id).orElseThrow(()-> new RuntimeException("no Worker found"));
 
             existingworker.setHourlyrate(worker.getHourlyrate());
             existingworker.setRating(worker.getRating());
