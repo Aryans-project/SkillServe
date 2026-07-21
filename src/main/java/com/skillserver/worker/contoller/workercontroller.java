@@ -1,15 +1,13 @@
 package com.skillserver.worker.contoller;
 
-import com.skillserver.worker.entity.worker;
+import com.skillserver.worker.entity.Worker;
 import com.skillserver.worker.service.workerservice;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
-
 @RestController
-@RequestMapping("/worker")
+@RequestMapping("/Worker")
 public class workercontroller {
     private final workerservice workerservice;
 
@@ -18,7 +16,7 @@ public class workercontroller {
         this.workerservice=workerservice;
     }
     @GetMapping("/{id}")
-    public worker getworker(@PathVariable Integer id)
+    public Worker getworker(@PathVariable Integer id)
     {
         return workerservice.findworker(id);
     }
@@ -29,17 +27,17 @@ public class workercontroller {
         workerservice.deleteById(id);
     }
     @GetMapping
-    public List<worker> getallworker()
+    public List<Worker> getallworker()
     {
         return workerservice.allworker();
     }
     @PostMapping
-    public worker createworker(@RequestBody worker worker)
+    public Worker createworker(@RequestBody Worker worker)
     {
         return workerservice.createworker(worker);
     }
     @PutMapping("/{id}")
-    public worker updateworker(@PathVariable Integer id,@RequestBody worker worker)
+    public Worker updateworker(@PathVariable Integer id, @RequestBody Worker worker)
     {
         return workerservice.updateworker(id,worker);
     }

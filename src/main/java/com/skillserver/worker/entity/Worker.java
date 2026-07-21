@@ -9,7 +9,7 @@ import java.util.List;
 
 @Entity
 @Data
-public class worker {
+public class Worker {
 
 
     @Id
@@ -18,13 +18,11 @@ public class worker {
     @OneToOne
     @JoinColumn(name="user_id")
     private Users user;
-    private double hourlyrate;
+    private Double hourlyrate;
     @OneToMany(mappedBy = "work")
-    private List<workerskill> skills;
-    @OneToMany
-    private List<Review> review;
+    private List<WorkerSkill> skills;
     private boolean availability;
-    private double rating;
-    private int projectcompleted;
+    private Double rating;
+    private Integer projectcompleted;
 
 }
